@@ -6,7 +6,7 @@ namespace BFF.DataVirtualizingCollection.Sample.View
     {
         public App()
         {
-            var mainWindowView = AutofacModule.Start();
+            var mainWindowView = DryIocModule.Start();
             mainWindowView.Show();
         }
 

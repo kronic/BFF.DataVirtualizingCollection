@@ -10,7 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="5.1.2" />
+      <PackageReference Include="DryIoc.dll" Version="4.4.1" />
+      <PackageReference Include="MrMeeseeks" Version="69.0.1" />
       <PackageReference Include="System.Reactive" Version="4.4.1" />
     </ItemGroup>
 
