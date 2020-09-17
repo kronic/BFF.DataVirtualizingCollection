@@ -7,16 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.Persistence.Proxy\BFF.DataVirtualizingCollection.Sample.Persistence.Proxy.csproj" />
-      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.ViewModel\BFF.DataVirtualizingCollection.Sample.ViewModel.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="ControlzEx" Version="4.3.2" />
-      <PackageReference Include="LambdaConverters" Version="4.0.0" />
-      <PackageReference Include="MahApps.Metro" Version="2.2.0" />
-      <PackageReference Include="MahApps.Metro.IconPacks" Version="3.7.0" />
-      <PackageReference Include="VirtualizingWrapPanel" Version="1.4.2" />
+      <None Remove="ProfilePics\00_Wide.png" />
+      <None Remove="ProfilePics\01_Paria.png" />
+      <None Remove="ProfilePics\02_Morexandra.png" />
+      <None Remove="ProfilePics\03_Smennifer.png" />
+      <None Remove="ProfilePics\04_Anyetlana.png" />
+      <None Remove="ProfilePics\05_Korko.png" />
+      <None Remove="ProfilePics\06_Kowel.png" />
+      <None Remove="ProfilePics\07_Sinia.png" />
+      <None Remove="ProfilePics\08_Wonathan.png" />
+      <None Remove="ProfilePics\09_Matban.png" />
+      <None Remove="ProfilePics\10_Surgiana.png" />
+      <None Remove="ProfilePics\11_Jogory.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -59,33 +61,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="Views\Options\GeneralOptionsView.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Views\Options\SlidingWindowOptionsView.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Views\Functions\GeneralFunctionsView.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Views\Functions\SpecificFunctionsView.xaml">
-        <Generator></Generator>
-      </Page>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="Views\Options\GeneralOptionsView.xaml.cs">
-        <DependentUpon>GeneralOptionsView.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Views\Options\SlidingWindowOptionsView.xaml.cs">
-        <DependentUpon>SlidingWindowOptionsViewModel.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Views\Functions\GeneralFunctionsView.xaml.cs">
-        <DependentUpon>GeneralFunctionsView.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Views\Functions\SpecificFunctionsView.xaml.cs">
-        <DependentUpon>SpecificFunctionsView.xaml</DependentUpon>
-      </Compile>
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.CompositionRoot\BFF.DataVirtualizingCollection.Sample.CompositionRoot.csproj" />
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.View\BFF.DataVirtualizingCollection.Sample.View.csproj" />
     </ItemGroup>
 
 </Project>

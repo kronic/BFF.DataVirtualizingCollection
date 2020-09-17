@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Reactive.Disposables;
 using System.Reflection;
 using Autofac;
@@ -5,7 +7,7 @@ using BFF.DataVirtualizingCollection.Sample.View.ViewModelInterfaceImplementatio
 using BFF.DataVirtualizingCollection.Sample.View.Views;
 using Module = Autofac.Module;
 
-namespace BFF.DataVirtualizingCollection.Sample.View
+namespace BFF.DataVirtualizingCollection.Sample.CompositionRoot
 {
     public class AutofacModule : Module
     {
@@ -24,11 +26,8 @@ namespace BFF.DataVirtualizingCollection.Sample.View
         
         protected override void Load(ContainerBuilder builder)
         {
-            var assemblies = new[]
-            {
-                Assembly.GetExecutingAssembly()
-            };
-
+            var assemblies = GetSolutionAssemblies().ToArray();
+                    
             builder.RegisterAssemblyTypes(assemblies)
                 .AsImplementedInterfaces()
                 .AsSelf();
@@ -43,9 +42,13 @@ namespace BFF.DataVirtualizingCollection.Sample.View
                 .UsingConstructor(() => new CompositeDisposable())
                 .InstancePerLifetimeScope();
             
-            builder.RegisterModule(new BFF.DataVirtualizingCollection.Sample.ViewModel.AutofacModule());
-            
-            builder.RegisterModule(new BFF.DataVirtualizingCollection.Sample.Persistence.Proxy.AutofacModule());
+            static IEnumerable<Assembly> GetSolutionAssemblies()
+            {
+                yield return Assembly.Load(typeof(View.Type).Assembly.FullName ?? "");
+                yield return Assembly.Load(typeof(ViewModel.Type).Assembly.FullName ?? "");
+                yield return Assembly.Load(typeof(Model.Type).Assembly.FullName ?? "");
+                yield return Assembly.Load(typeof(Persistence.Type).Assembly.FullName ?? "");
+            }
         }
     }
 }

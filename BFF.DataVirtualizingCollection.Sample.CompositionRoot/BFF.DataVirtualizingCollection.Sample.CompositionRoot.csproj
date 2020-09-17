@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="5.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.Model\BFF.DataVirtualizingCollection.Sample.Model.csproj" />
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.Persistence\BFF.DataVirtualizingCollection.Sample.Persistence.csproj" />
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.ViewModel\BFF.DataVirtualizingCollection.Sample.ViewModel.csproj" />
+      <ProjectReference Include="..\BFF.DataVirtualizingCollection.Sample.View\BFF.DataVirtualizingCollection.Sample.View.csproj" />
+    </ItemGroup>
+
+</Project>

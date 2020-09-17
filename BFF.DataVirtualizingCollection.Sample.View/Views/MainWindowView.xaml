@@ -3,14 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:view="clr-namespace:BFF.DataVirtualizingCollection.Sample.View"
         xmlns:viewModels="clr-namespace:BFF.DataVirtualizingCollection.Sample.ViewModel.ViewModels;assembly=BFF.DataVirtualizingCollection.Sample.ViewModel"
         xmlns:views="clr-namespace:BFF.DataVirtualizingCollection.Sample.View.Views"
         d:DataContext="{d:DesignInstance viewModels:IMainWindowViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel LastChildFill="True">
-        <ProgressBar IsIndeterminate="True" Height="5" DockPanel.Dock="Bottom" Visibility="{x:Static view:App.IsDebug}" />
+        <ProgressBar IsIndeterminate="True" Height="5" DockPanel.Dock="Bottom" Visibility="{x:Static views:MainWindowView.IsDebug}" />
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Left">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabItem}">
